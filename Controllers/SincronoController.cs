@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using System.Threading.Tasks;
 using ExAsyncApi.ExternalService;
 using ExAsyncApi.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -34,13 +33,13 @@ namespace ExAsyncApi.Controllers
 
             var modeloUnificado = new ModeloUnificado()
             {
-                TempoExecucaoSeg = stopwatch.Elapsed.TotalSeconds,
                 Albums = albums,
                 Comments = comments,
                 Photos = photos,
                 Posts = posts,
                 Users = users,
-                Todos = todos
+                Todos = todos,
+                TempoExecucaoSeg = stopwatch.Elapsed.TotalSeconds,
             };
 
             return Ok(modeloUnificado);
